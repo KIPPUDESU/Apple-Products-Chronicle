@@ -1,13 +1,16 @@
 <template>
   <div
-  class="
-  min-h-screen
+  class="absolute w-full h-screen
+  min-h-screen z-10
   bg-gradient-to-b
   from-white to-gray-400
   drop-shadow-2xl
   "
   >
+  </div>
+  <div class="pt-1">
     <Header :jumpHeader="jumpHeader" />
+    <!-- 因为不向minicard传数组，所以再card内添加“？”来关闭错误提示（变成可选项） -->
     <MiniCard @showHeader="OnshowHeader" :jumpHeader="jumpHeader" />
   </div>
   

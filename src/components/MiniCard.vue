@@ -1,15 +1,16 @@
 <template>
-  <div class="flex gap-15 justify-center">
-    <div v-for="product in products" :key="product.id"
-    class="
-    z-20 flex h-72 w-60 mt-40
-    relative 
-    rounded-2xl drop-shadow-2xl justify-center
-    bg-gradient-to-bl from-gray-100 to-white/80 backdrop-blur-2xl
-    transition-all duration-800 ease-in-out
-    "
-    :class="jumpHeader ? 'mt-60' : 'mt-0'"
-    >
+  <div class="flex gap-40 w-screen h-screen justify-center overflow-x-auto">
+    <div
+  v-for="product in products" 
+  :key="product.id"
+  class="z-20 flex flex-none h-62 w-50
+         relative rounded-2xl drop-shadow-2xl justify-center
+         bg-gradient-to-bl from-gray-100 to-white/80 backdrop-blur-2xl
+         transition-all duration-800 ease-in-out"
+  :class="jumpHeader ? 'mt-60' : (product.id % 2 === 0 ? 'mt-108' : 'mt-16')"
+>
+<!-- 上面采用逻辑的嵌套，要么点击后都回到60，要么计算奇偶一个上一个下（错落） -->
+
      <!-- 上半背景层 -->
     <!-- <div class="absolute inset-x-0 top-0 h-6/10 bg-gradient-to-r
     from-white/40 to-gray-100/40 rounded-t-4xl drop-shadow-2xl"></div>
@@ -18,15 +19,15 @@
     from-white/70 to-gray-100/60 rounded-b-4xl drop-shadow-2xl"></div> -->
     <a href="#" class="absolute inset-0 z-30" @click.prevent="showHeader"></a>
 
-    <div class="z-10 w-50 mt-6 drop-shadow-xl">
+    <div class="z-10 w-40 mt-6 drop-shadow-xl">
       <!-- 加冒号 :，代表绑定表达式，不然就是写死的字符串 -->
       <img :src="product.AppleImg" alt="">
     </div>
-    <div class="absolute z-10 w-10 bottom-12 left-1/14 drop-shadow-2xl">
+    <div class="absolute z-10 w-8 bottom-12 left-1/14 drop-shadow-2xl">
       <img :src="product.FeatureImg" alt="">
     </div>
     <div class="
-    absolute bottom-8 left-17 text-[15px] font-bold
+    absolute bottom-8 left-17 text-[14px] font-bold
     ">
       <p>{{ product.desc[0] }}</p>
       <p>{{ product.desc[1] }}</p>
@@ -35,7 +36,7 @@
     class="
     absolute bottom-0 left-0 drop-shadow-2xl
     transform translate-y-1/2 -translate-x-1/10
-    text-[29px] font-bold whitespace-nowrap flex gap-1
+    text-[26px] font-bold whitespace-nowrap flex gap-1
     "
     >
       <h1>{{ product.title }}</h1>

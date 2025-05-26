@@ -9,6 +9,9 @@
   >
   </div>
   <div class="pt-1">
+    <div class="absolute z-10 inset-x-0 top-1/2">
+      <TimeLine />
+    </div>
     <Header :jumpHeader="jumpHeader" />
     <!-- 因为不向minicard传数组，所以再card内添加“？”来关闭错误提示（变成可选项） -->
     <MiniCard @showHeader="OnshowHeader" :jumpHeader="jumpHeader" />
@@ -20,6 +23,7 @@
 import { ref, onBeforeUnmount, watch } from 'vue';
 import MiniCard from './components/MiniCard.vue';
 import Header from './components/Header.vue';
+import TimeLine from './components/TimeLine.vue';
 
 // 以下方法通过控制布尔值来操控header组件内
 const jumpHeader = ref(false)

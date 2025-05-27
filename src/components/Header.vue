@@ -2,7 +2,7 @@
 <div>
     <div
 :class="[
-    'absolute z-10 top-0 left-0 w-full h-75 bg-white drop-shadow-2xl transition-transform duration-800 ease-in-out',
+    'absolute z-10 top-0 left-0 w-full h-80 bg-white drop-shadow-2xl transition-transform duration-800 ease-in-out',
     jumpHeader ? 'translate-y-0' : '-translate-y-full'
   ]"
 >

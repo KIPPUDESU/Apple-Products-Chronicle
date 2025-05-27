@@ -1,8 +1,9 @@
 <template>
 <div>
-<div class="relative w-screen h-0.5 bg-gradient-to-r from-gray-400 to-gray-300"></div>
 <div 
-class="flex w-screen h-full justify-center items-center gap-40"
+class="
+flex justify-center items-center 
+gap-40"
 >
  <div v-for="product in products" 
      :key="product.id"

@@ -10,21 +10,27 @@
   </div> -->
 
   <!-- 此处设定成h-screen会让高度超出页面，目前不知道原因 -->
-  <div class="relative h-screen w-screen">
+  <div class="relative h-screen ">
   <div
   class="
   absolute inset-0 z-0"
   ></div>
   <div ref="applescoll" class="
-  flex px-110
-  overflow-x-scroll h-full w-full
+  flex overflow-x-scroll h-full w-full
   ">
     <div
   class="
   absolute inset-0 
-  bg-gradient-to-r from-white to-gray-900 z-0"
+  bg-gradient-to-r from-white to-gray-500 z-0"
   ></div>
     <!-- <TimeLine /> -->
+    <!-- transition-all duration-500 ease-in-out添加动画类 -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 rounded-2xl
+    h-1 bg-gradient-to-r from-gray-500/70 to-gray-300/80 backdrop-blur-2xl
+    transition-all duration-500 ease-in-out
+    "
+    :class="jumpHeader ? 'w-0' : 'w-350' "
+    ></div>
     <Header :jumpHeader="jumpHeader" />
     <!-- 因为不向minicard传数组，所以再card内添加“？”来关闭错误提示（变成可选项） -->
     <MiniCard @showHeader="OnshowHeader" :jumpHeader="jumpHeader" />
@@ -39,7 +45,7 @@
 import { ref,onMounted, onBeforeUnmount } from 'vue';
 import MiniCard from './components/MiniCard.vue';
 import Header from './components/Header.vue';
-import TimeLine from './components/TimeLine.vue';
+// import TimeLine from './components/TimeLine.vue';
 
 // 以下方法通过控制布尔值来操控header组件内
 const jumpHeader = ref(false)

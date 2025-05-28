@@ -10,18 +10,21 @@
   </div> -->
 
   <!-- 此处设定成h-screen会让高度超出页面，目前不知道原因 -->
-  <div class="relative h-[98vh] w-max px-10 ">
+  <div class="relative h-screen w-screen">
   <div
   class="
-  absolute inset-0 
-  bg-gradient-to-b from-white to-gray-400 z-0"
+  absolute inset-0 z-0"
   ></div>
   <div ref="applescoll" class="
-  overflow-x-scroll h-full px-50
+  flex px-110
+  overflow-x-scroll h-full w-full
   ">
-    <div class="absolute z-10 top-1/2">
-      <TimeLine />
-    </div>
+    <div
+  class="
+  absolute inset-0 
+  bg-gradient-to-r from-white to-gray-900 z-0"
+  ></div>
+    <!-- <TimeLine /> -->
     <Header :jumpHeader="jumpHeader" />
     <!-- 因为不向minicard传数组，所以再card内添加“？”来关闭错误提示（变成可选项） -->
     <MiniCard @showHeader="OnshowHeader" :jumpHeader="jumpHeader" />

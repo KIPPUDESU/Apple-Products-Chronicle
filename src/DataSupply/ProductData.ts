@@ -42,6 +42,16 @@ export const products : Product[] = [
     },
     {
     id: 3,
+    AppleImg: 'src/images/iMac M4(k).png',
+    FeatureImg: 'src/images/M4(k).png',
+    title: 'iMac',
+    plustitle: 'M4',
+    desc: ['更低调的浅色七彩', '像素皆因神经网络而焕然新生'],
+
+    year:2024
+    },
+    {
+    id: 4,
     AppleImg: 'src/images/ipadairM3(k).png',
     FeatureImg: 'src/images/M3(k).png',
     title: 'iPad Air',
@@ -51,7 +61,7 @@ export const products : Product[] = [
     year:2025
     },
     {
-    id: 4,
+    id: 5,
     AppleImg: 'src/images/iPhone 16 pro(k).png',
     FeatureImg: 'src/images/A18 PRO(k).png',
     title: 'iPhone 16 Pro',
@@ -61,7 +71,7 @@ export const products : Product[] = [
     year:2025
     },
     {
-    id: 5,
+    id: 6,
     AppleImg: 'src/images/Mac studio M4(k).png',
     FeatureImg: 'src/images/M4 max.png',
     title: 'Mac Studio',

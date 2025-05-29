@@ -27,7 +27,7 @@
       <img :src="product.FeatureImg" alt="">
     </div>
     <div class="
-    absolute bottom-8 left-15 text-[15px] font-bold
+    absolute bottom-8 left-15 text-[15px] font-bold z-10
     ">
       <p>{{ product.desc[0] }}</p>
       <p>{{ product.desc[1] }}</p>
@@ -35,12 +35,20 @@
     <div
     class="
     absolute bottom-0 left-0 drop-shadow-2xl
-    transform translate-y-1/2 -translate-x-1/10
+    transform translate-y-1/2 -translate-x-1/8
     text-[26px] font-bold whitespace-nowrap flex gap-1
     "
     >
       <h1>{{ product.title }}</h1>
       <h1 class="text-gray-700 text-[10px]">{{ product.plustitle }}</h1>
+    </div>
+    <div class="
+    transition-all duration-650 ease-in-out
+    absolute font-bold text-gray-700 text-[25px]
+    "
+    :class="jumpHeader ? (product.id % 2 === 0 ? 'top-30 opacity-0' : 'top-30 opacity-0') : (product.id % 2 === 0 ? '-top-30' : 'top-85')"
+    >
+      <h1>{{ product.year }}</h1>
     </div>
     </div>
   </div>

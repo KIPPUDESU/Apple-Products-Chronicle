@@ -29,6 +29,16 @@
     "
     :class="jumpHeader ? 'w-0' : 'w-350' "
     ></div>
+    <button class="
+    absolute h-20 w-20 right-0 top-1/2 mx-4
+    transform -translate-y-1/2 rounded-3xl
+    bg-gray-500 text-white/50 p-2 opacity-30
+    hover:opacity-80 transition duration-500
+    text-4xl
+    " @click="goHome">
+     >
+    </button>
+
     <!-- 头部内容 -->
     <Header :jumpHeader="jumpHeader" />
     <!-- 因为不向minicard传数组，所以再card内添加“？”来关闭错误提示（变成可选项） -->
@@ -46,7 +56,12 @@ import { ref,onMounted, onBeforeUnmount } from 'vue';
 import MiniCard from '../components/MiniCard.vue';
 import Header from '../components/Header.vue';
 // import TimeLine from './components/TimeLine.vue';
+import { useRouter } from 'vue-router'
+const router = useRouter()
 
+function goHome(): void {
+    router.push({ path: '/' })
+}
 // 以下方法通过控制布尔值来操控header组件内
 const jumpHeader = ref(false)
 

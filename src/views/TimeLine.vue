@@ -9,30 +9,30 @@
   >
   </div> -->
 
-  <!-- 此处设定成h-screen会让高度超出页面，目前不知道原因 -->
-  <div class="relative h-screen ">
-  <div
-  class="
-  absolute inset-0 z-0"
-  ></div>
-  <div ref="applescoll" class="overscroll-x-auto
+  <div class="relative h-screen">
+  <!-- 滚动容器 -->
+  <div ref="applescoll" class="
   flex overflow-x-scroll h-full w-full
   ">
-    <div
+  <!-- 背景 -->
+  <div
   class="
   absolute inset-0 
   bg-gradient-to-r from-white to-gray-500 z-0"
   ></div>
-    <!-- <TimeLine /> -->
     <!-- transition-all duration-500 ease-in-out添加动画类 -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 rounded-2xl
+    <!-- 时间线 -->
+    <div class="
+    absolute top-1/2 left-1/2 -translate-x-1/2 rounded-2xl
     h-1 bg-gradient-to-r from-gray-500/70 to-gray-300/80 backdrop-blur-2xl
     transition-all duration-500 ease-in-out
     "
     :class="jumpHeader ? 'w-0' : 'w-350' "
     ></div>
+    <!-- 头部内容 -->
     <Header :jumpHeader="jumpHeader" />
     <!-- 因为不向minicard传数组，所以再card内添加“？”来关闭错误提示（变成可选项） -->
+     <!-- 卡片 -->
     <MiniCard @showHeader="OnshowHeader" :jumpHeader="jumpHeader" />
   </div>
 

@@ -1,6 +1,6 @@
 import { createRouter,createWebHistory } from "vue-router"
 import Home from '../views/Home.vue'
-import TimeLine from '../views/TimeLine.vue'
+// import TimeLine from '../views/TimeLine.vue'
 
 const routes = [
     {
@@ -11,6 +11,7 @@ const routes = [
     {
         path: '/timeline',
         name: 'TimeLine',
+        // 懒加载
         component: () => import('../views/TimeLine.vue')
     }
 ]

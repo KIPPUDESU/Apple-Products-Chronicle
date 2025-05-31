@@ -2,7 +2,7 @@
 <div>
 <div 
 class="
-flex h-screen gap-40 justify-center items-center"
+flex  h-screen gap-40 justify-center items-center"
 >
  <div v-for="product in products" 
      :key="product.id"

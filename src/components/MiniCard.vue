@@ -1,14 +1,14 @@
 <template>
   <div class="flex gap-40 justify-center px-110">
     <div
-  v-for="product in products" 
-  :key="product.id"
-  class="z-20 flex flex-none h-62 w-50
-        rounded-2xl drop-shadow-2xl justify-center
-         bg-gradient-to-bl from-gray-100/90 to-white/60 backdrop-blur-2xl
-         transition-all duration-800 ease-in-out"
-  :class="jumpHeader ? 'mt-60' : (product.id % 2 === 0 ? 'mt-110' : 'mt-15')"
->
+      v-for="product in products" 
+      :key="product.id"
+      class="z-20 flex flex-none h-62 w-50
+            rounded-2xl drop-shadow-2xl justify-center
+            bg-gradient-to-bl from-gray-100/90 to-white/60 backdrop-blur-2xl
+            transition-all duration-800 ease-in-out"
+      :class="jumpHeader ? 'mt-60' : (product.id % 2 === 0 ? 'mt-110' : 'mt-15')"
+    >
 <!-- 上面采用逻辑的嵌套，要么点击后都回到60，要么计算奇偶一个上一个下（错落） -->
 
      <!-- 上半背景层 -->
@@ -39,7 +39,7 @@
     text-[26px] font-bold whitespace-nowrap flex gap-1
     "
     >
-      <h1>{{ product.title }}</h1>
+      <h1>{{ product.title }}s</h1>
       <h1 class="text-gray-700 text-[10px]">{{ product.plustitle }}</h1>
     </div>
     <div class="

@@ -2,14 +2,14 @@
     <div 
     class="relative flex justify-center
     w-full 
-    transition-all duration-300 ease-out z-0
+    transition-all duration-200 ease-out z-0
     "
     :class="DownOrUp? 'h-screen bg-white/30 backdrop-blur-xl' : 'h-[44px] bg-white/0'"
     >
     <div class="
     flex relative w-full justify-center
-    backdrop-blur-2xl bg-white/80
-    transition-all duration-500 ease
+    backdrop-blur-2xl bg-white/90
+    transition-all duration-400 ease
     "
     :class="DownOrUp? 'h-[452px]' : 'h-[44px]'"
     >

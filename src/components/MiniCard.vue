@@ -39,7 +39,7 @@
     text-[26px] font-bold whitespace-nowrap flex gap-1
     "
     >
-      <h1>{{ product.title }}s</h1>
+      <h1>{{ product.title }}</h1>
       <h1 class="text-gray-700 text-[10px]">{{ product.plustitle }}</h1>
     </div>
     <div class="
@@ -55,7 +55,7 @@
 </template>
 
 <script setup lang="ts">
-import { products } from '../DataSupply/ProductData'
+import { products } from '../DataSupply/iPhoneData'
 
 // // 宏函数让子组件能够接收父组件传递的属性（添加安全类型）
 // const props = defineProps<Props>()

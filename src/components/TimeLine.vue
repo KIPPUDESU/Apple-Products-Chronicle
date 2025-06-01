@@ -22,7 +22,7 @@ flex  h-screen gap-40 justify-center items-center"
 </template>
 
 <script setup lang="ts">
-import { products } from '../DataSupply/ProductData'
+import { products } from '../DataSupply/iPhoneData'
 </script>
 
 <style>

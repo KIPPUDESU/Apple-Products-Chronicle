@@ -10,6 +10,9 @@
   </div> -->
 
   <div class="relative h-screen">
+    <div class="flex absolute z-10 w-30 h-12 m-3 bg-red-300">
+      <ClassButton />
+    </div>
   <!-- 滚动容器 -->
   <div ref="applescoll" class="
   flex overflow-x-scroll h-full w-full
@@ -55,6 +58,7 @@
 import { ref,onMounted, onBeforeUnmount } from 'vue';
 import MiniCard from '../components/MiniCard.vue';
 import Header from '../components/Header.vue';
+import ClassButton from '../components/ClassButton.vue';
 // import TimeLine from './components/TimeLine.vue';
 import { useRouter } from 'vue-router'
 const router = useRouter()

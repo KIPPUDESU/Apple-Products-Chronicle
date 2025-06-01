@@ -28,8 +28,8 @@ export const products : Product[] = [
     },
     {
     id: 2,
-    categoryImg: 'src/images/macbookbig.png',
-    categoryTitle: 'MacBook Air',
+    categoryImg: 'src/images/macbook(k).png',
+    categoryTitle: 'MacBook',
     plusTitle: '身轻身手快。',
     },
     {

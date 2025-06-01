@@ -8,11 +8,11 @@
   "
   >
   </div> -->
-
+  <div class="flex absolute z-20 w-full h-11">
+      <ClassHeader @goHome="classEvent" />
+  </div>
   <div class="relative h-screen">
-    <div class="flex absolute z-10 w-30 h-12 m-3 bg-red-300">
-      <ClassButton />
-    </div>
+    
   <!-- 滚动容器 -->
   <div ref="applescoll" class="
   flex overflow-x-scroll h-full w-full
@@ -21,7 +21,7 @@
   <div
   class="
   absolute inset-0 
-  bg-gradient-to-r from-white to-gray-500 z-0"
+  bg-gradient-to-r from-white to-gray-400/90"
   ></div>
     <!-- transition-all duration-500 ease-in-out添加动画类 -->
     <!-- 时间线 -->
@@ -32,15 +32,6 @@
     "
     :class="jumpHeader ? 'w-0' : 'w-350' "
     ></div>
-    <button class="
-    absolute h-20 w-20 right-0 top-1/2 mx-4
-    transform -translate-y-1/2 rounded-3xl
-    bg-gray-500 text-white/50 p-2 opacity-30
-    hover:opacity-80 transition duration-500
-    text-4xl
-    " @click="goHome">
-     >
-    </button>
 
     <!-- 头部内容 -->
     <Header :jumpHeader="jumpHeader" />
@@ -58,12 +49,13 @@
 import { ref,onMounted, onBeforeUnmount } from 'vue';
 import MiniCard from '../components/MiniCard.vue';
 import Header from '../components/Header.vue';
-import ClassButton from '../components/ClassButton.vue';
 // import TimeLine from './components/TimeLine.vue';
 import { useRouter } from 'vue-router'
+import ClassHeader from '../components/ClassHeader.vue';
 const router = useRouter()
 
-function goHome(): void {
+function classEvent(): void {
+    console.log('ok')
     router.push({ path: '/' })
 }
 // 以下方法通过控制布尔值来操控header组件内

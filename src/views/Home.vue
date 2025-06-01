@@ -9,7 +9,7 @@ class="flex flex-col relative gap-10"
   >
   <HomeHeader />
   </div>
-  <div ref="applescoll" class="flex overflow-x-scroll h-132 w-full" >
+  <div ref="applescoll" class="flex overflow-x-scroll h-132 w-auto" >
     <div
     class="
     absolute inset-0 

@@ -8,7 +8,13 @@
   "
   >
   </div> -->
-  <div class="flex absolute z-20 w-full h-11">
+  <div 
+  class="
+  flex absolute z-30 w-full
+  transition-all duration-500 ease-in-out
+  "
+  :class="jumpHeader ? '-top-[44px]' : 'top-0' "
+>
       <ClassHeader @goHome="classEvent" />
   </div>
   <div class="relative h-screen">
@@ -20,7 +26,7 @@
   <!-- 背景 -->
   <div
   class="
-  absolute inset-0 
+  absolute h-full w-full 
   bg-gradient-to-r from-white to-gray-400/90"
   ></div>
     <!-- transition-all duration-500 ease-in-out添加动画类 -->
@@ -30,7 +36,7 @@
     h-1 bg-gradient-to-r from-gray-500/70 to-gray-300/80 backdrop-blur-2xl
     transition-all duration-500 ease-in-out
     "
-    :class="jumpHeader ? 'w-0' : 'w-350' "
+    :class="jumpHeader ? 'w-0' : 'w-350 lg:w-270 sm:w-180 xl:w-350' "
     ></div>
 
     <!-- 头部内容 -->

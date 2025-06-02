@@ -15,7 +15,10 @@
   "
   :class="jumpHeader ? '-top-[44px]' : 'top-0' "
 >
-      <ClassHeader @goHome="classEvent" />
+      <ClassHeader
+       @goHome="classEvent"
+       @ClassChange="ClassChange"
+       />
   </div>
   <div class="relative h-screen">
     
@@ -43,7 +46,11 @@
     <Header :jumpHeader="jumpHeader" />
     <!-- 因为不向minicard传数组，所以再card内添加“？”来关闭错误提示（变成可选项） -->
      <!-- 卡片 -->
-    <MiniCard @showHeader="OnshowHeader" :jumpHeader="jumpHeader" />
+    <MiniCard 
+    @showHeader="OnshowHeader" 
+    :jumpHeader="jumpHeader"
+    :OnChange="OnChange"
+    />
   </div>
 
   </div>
@@ -63,6 +70,35 @@ const router = useRouter()
 function classEvent(): void {
     console.log('ok')
     router.push({ path: '/' })
+}
+
+const OnChange = ref<string | null>(null)
+function ClassChange(ClassKey:string) {
+  OnChange.value = ClassKey
+  console.log(ClassKey)
+  // 在下方进行了点击测试
+  // switch (ClassKey) {
+    // 在下方进行了点击测试
+    // case 'iPhone':
+    //   console.log('1被选中')
+    //   ClassChange.value =
+    //   break
+    // case 'iPad':
+    //   console.log('2被选中')
+    //   break
+    // case 'Watch':
+    //   console.log('3被选中')
+    //   break
+    // case 'MacBook':
+    //   console.log('4被选中')
+    //   break
+    // case 'Mac':
+    //   console.log('5被选中')
+    //   break
+    // case 'Vision':
+    //   console.log('6被选中')
+    //   break
+  
 }
 // 以下方法通过控制布尔值来操控header组件内
 const jumpHeader = ref(false)

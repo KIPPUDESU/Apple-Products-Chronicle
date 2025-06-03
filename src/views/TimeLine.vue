@@ -73,32 +73,10 @@ function classEvent(): void {
 }
 
 const OnChange = ref<string | null>(null)
+
 function ClassChange(ClassKey:string) {
   OnChange.value = ClassKey
   console.log(ClassKey)
-  // 在下方进行了点击测试
-  // switch (ClassKey) {
-    // 在下方进行了点击测试
-    // case 'iPhone':
-    //   console.log('1被选中')
-    //   ClassChange.value =
-    //   break
-    // case 'iPad':
-    //   console.log('2被选中')
-    //   break
-    // case 'Watch':
-    //   console.log('3被选中')
-    //   break
-    // case 'MacBook':
-    //   console.log('4被选中')
-    //   break
-    // case 'Mac':
-    //   console.log('5被选中')
-    //   break
-    // case 'Vision':
-    //   console.log('6被选中')
-    //   break
-  
 }
 // 以下方法通过控制布尔值来操控header组件内
 const jumpHeader = ref(false)

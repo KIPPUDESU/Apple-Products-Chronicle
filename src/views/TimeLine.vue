@@ -18,6 +18,7 @@
       <ClassHeader
        @goHome="classEvent"
        @ClassChange="ClassChange"
+       @SonClassChange="SonClassChange"
        />
   </div>
   <div class="relative h-screen">
@@ -50,9 +51,9 @@
     @showHeader="OnshowHeader" 
     :jumpHeader="jumpHeader"
     :OnChange="OnChange"
+    :OnAppleClassName="OnAppleClassName"
     />
   </div>
-
   </div>
   
 </template>
@@ -73,11 +74,19 @@ function classEvent(): void {
 }
 
 const OnChange = ref<string | null>(null)
+const OnAppleClassName = ref<string | null>(null)
 
+// 一个大类传来的参，一个子类传来的参
+// 传给MiniCard
 function ClassChange(ClassKey:string) {
   OnChange.value = ClassKey
   console.log(ClassKey)
 }
+function SonClassChange(MainClassName:string, AppleClassName:string) {
+  console.log('AppleClassName:',MainClassName, AppleClassName)
+  OnAppleClassName.value = AppleClassName
+}
+
 // 以下方法通过控制布尔值来操控header组件内
 const jumpHeader = ref(false)
 

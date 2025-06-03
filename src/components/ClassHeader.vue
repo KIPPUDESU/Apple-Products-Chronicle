@@ -35,7 +35,7 @@
             {{ item.label }}
 
             <!-- 列表 -->
-            <!-- 当DownOrUp为true，且SonKey=item.key才会被渲染-->
+            <!-- 当DownOrUp为true，且SonKey=item.key，item来自AplleClass才会被渲染-->
             <div
             v-show="DownOrUp && NowKey ===item.key"
             class="
@@ -74,6 +74,7 @@ import { ref } from 'vue'
 const emit = defineEmits<{
  (event:'goHome'):void
  (event:'ClassChange',payload:string):void
+ (event:'SonClassChange',itemKey:string, subKey:string):void
 }>()
 
 function goHome() {
@@ -100,8 +101,9 @@ function ClassChange(ClassKey:string) {
     emit('ClassChange',ClassKey)
 }
 
-
+// 把产品名称和Sub的产品名称都发出去，注意只接收sub
 function SonClassChenge(itemKey:string, subKey:string) {
+    emit('SonClassChange',itemKey, subKey)
     console.log('点击了子菜单：', itemKey, subKey)
 }
 
@@ -115,7 +117,7 @@ const AppleClass = [
     { key: 'Vision', label: 'Vision' },
     ]
 
-const SonClass = {
+const SonClass : { [key: string]: { subKey: string; label: string }[] } = {
     iPhone: [
         { subKey: 'FulliPhone', label: '浏览所有 iPhone 品类' },
     ],

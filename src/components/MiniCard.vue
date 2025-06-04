@@ -1,7 +1,7 @@
 <template>
   <div class="flex gap-40 justify-center px-110">
     <div
-      v-for="product in products" 
+      v-for="product in RenderAppleData" 
       :key="product.id"
       class="z-20 flex flex-none h-62 w-50
             rounded-2xl drop-shadow-2xl justify-center
@@ -55,13 +55,21 @@
 </template>
 
 <script setup lang="ts">
-import { products } from '../DataSupply/iPhoneData'
+import { computed, ref } from 'vue'
+import { products as FulliPhone } from '../DataSupply/iPhoneData'
+import { products as FulliPad } from '../DataSupply/iPadData'
+import { products as FullWatch } from '../DataSupply/WatchData'
+import { products as FullBook } from '../DataSupply/BookData'
+import { products as FullMac } from '../DataSupply/MacData'
+import { products as FullAirPods } from '../DataSupply/AirPodsData'
+import { products as Vision } from '../DataSupply/VisionData'
+
 
 // // 宏函数让子组件能够接收父组件传递的属性（添加安全类型）
 // const props = defineProps<Props>()
 // // 在底部把props解构出来丢给products和一个布尔值给jump
 // const { jumpHeader } = props
-const {jumpHeader} = defineProps<Props>()
+const { jumpHeader, OnAppleClassName } = defineProps<Props>()
 
 //接收父组件传入的props：products
 // 我现在有两个父组件，两个都引用了minicard
@@ -69,6 +77,7 @@ const {jumpHeader} = defineProps<Props>()
 // 所以可以加个问号来关闭其中不提供数据的错误提示
 interface Props {
   jumpHeader: boolean
+  OnAppleClassName: string
 }
 
 const emit = defineEmits<{
@@ -78,6 +87,44 @@ const emit = defineEmits<{
 function showHeader() {
   emit('showHeader')
 }
+
+
+// 此处定义一个ts数据的映射源
+// Record定义一个key和一个任意类型any
+const allDataMap: Record<string, Array<any>> = {
+  FulliPhone: FulliPhone,
+  FulliPad: FulliPad,
+  FullWatch: FullWatch,
+  FullBook: FullBook,
+  FullMac: FullMac,
+  FullAirPods: FullAirPods,
+  Vision: Vision,
+}
+
+// 初始化被指定的源
+const NowAppleData = ref<string>('FulliPhone')
+
+// 立即根据 props 中传入的值进行切换
+switchAppleData(OnAppleClassName)
+
+// 或者监听 prop 变化
+import { watch } from 'vue'
+watch(() => OnAppleClassName, (newVal) => {
+  switchAppleData(newVal)
+})
+
+
+// 通过传入的OnAppleClassName来指定NowAppleData
+function switchAppleData(OnAppleClassName: string) {
+  if (allDataMap[OnAppleClassName]) {
+    NowAppleData.value = OnAppleClassName
+  }
+}
+
+// 指定根据指定映射发送渲染
+const RenderAppleData = computed(() => {
+  return allDataMap[NowAppleData.value] || []   
+})
 </script>
 
 <style>

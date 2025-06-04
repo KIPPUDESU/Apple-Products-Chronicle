@@ -3,7 +3,7 @@
     <div
       v-for="product in RenderAppleData" 
       :key="product.id"
-      class="z-20 flex flex-none h-62 w-50
+      class="z-20 flex flex-none h-64 w-52
             rounded-2xl drop-shadow-2xl justify-center
             bg-gradient-to-bl from-gray-100/90 to-white/60 backdrop-blur-2xl
             transition-all duration-800 ease-in-out"
@@ -27,7 +27,7 @@
       <img :src="product.FeatureImg" alt="">
     </div>
     <div class="
-    absolute bottom-8 left-15 text-[15px] font-bold z-10
+    absolute bottom-8 left-14 text-[15px] font-bold z-10
     ">
       <p>{{ product.desc[0] }}</p>
       <p>{{ product.desc[1] }}</p>

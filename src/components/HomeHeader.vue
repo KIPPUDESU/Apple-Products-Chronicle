@@ -6,13 +6,13 @@
     relative 
     ">
      <div class="
-     flex absolute top-20 w-80
+     flex absolute top-20 w-90
      ">
         <img src="../images/Apple.png" alt="">
      </div>
      <div class="
      flex flex-nowrap gap-4 absolute
-     text-[70px] font-bold top-95
+     text-[100px] font-bold top-95
      ">
         <h1 class="
         bg-gradient-to-b

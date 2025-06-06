@@ -19,9 +19,15 @@ class="flex flex-col relative gap-10"
   </div>
   <div
   class="
-  flex z-10 justify-center items-center h-100 w-full"
+  flex z-10 justify-center items-center h-80 w-full"
   >
-  <h1 class="text-8xl text-center font-bold">占位</h1>
+  <h1 class="
+  text-[40px] text-center font-bold
+  bg-clip-text text-transparent
+  bg-gradient-to-br from-black to-gray-600
+  hover:from-black hover:to-black
+  transition duration-600 ease-in-out
+  ">苹果以极致简洁与创新精神，将科技艺术融合为生活的灵感之光</h1>
   </div>
 </div>
 </template>
